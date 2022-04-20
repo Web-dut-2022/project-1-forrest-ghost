@@ -1,3 +1,4 @@
+import random
 import re
 
 from django.core.files.base import ContentFile
@@ -35,3 +36,7 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def random_entry():
+    list = list_entries()
+    return random.choice(list)
